@@ -25,18 +25,51 @@
         $grade2 = $_GET["grade2"];
         $final = (2*$grade1 + 3*$grade2) / 5;
         
-        if ($final > 89) {
-            print("Your final grade is $final. You got an A. Congratulations!");
+//        if ($final > 89) {
+//            print("Your final grade is $final. You got an A. Congratulations!");
+//        } elseif ($final > 79) {
+//            print("Your final grade is $final. You got an B.");
+//        } elseif ($final > 69) {
+//            print("Your final grade is $final. You got an C.");
+//        } elseif ($final > 59) {
+//            print("Your final grade is $final. You got an D.");
+//        } elseif ($final >= 0) {
+//            print("Your final grade is $final. You got an F.");
+//        } else {
+//            print("Illegal grade less than 0. Final grade = $final");
+//        }
+         if ($final > 89) {
+            printf("Your final grade is %.1f. You got an A. Congratulations!", $final);
+            $rate = "A";
         } elseif ($final > 79) {
-            print("Your final grade is $final. You got an B.");
+            printf("Your final grade is %.1f. You got a B.", $final);
+            $rate = "B";
         } elseif ($final > 69) {
-            print("Your final grade is $final. You got an C.");
+            printf("Your final grade is %.1f. You got a C.", $final);
+            $rate = "C";
         } elseif ($final > 59) {
-            print("Your final grade is $final. You got an D.");
-        } elseif ($final > 0) {
-            print("Your final grade is $final. You got an F.");
+            printf("Your final grade is %.1f. You got a D.", $final);
+            $rate = "D";
+        } elseif ($final > 39) {
+            printf("Your final grade is %.1f. You got a E.", $final);
+            $rate = "E";
+        } elseif ($final >= 0) {
+            printf("Your final grade is %.1f. You got a F.", $final);
+            $rate = "E";
         } else {
-            print("Illegal grade less than 0. Final grade = $final");
+            printf("Illegal grade less than 0. Final grade = $final", $final);
+            $rate = "Illegal";
+        }
+        
+        print("<br><br/>");
+        switch ($rate) {
+            case "A": print("Excellent!"); break;
+            case "B": print("Good!"); break;
+            case "C": print("Not bad!"); break;
+            case "D": print("Normal!"); break;
+            case "E":
+            case "F": print("You have to try again!!"); break;
+            default: print("Excellent!");
         }
         ?>
     </body>
