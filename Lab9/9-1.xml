@@ -1,0 +1,15 @@
+<!DOCTYPE students [
+    <!ELEMENT students (studentID, fullName, class) >
+    <!ELEMENT fullName (firstName, lastName) >
+]>
+
+<students>
+    <studentID>
+        20166589
+    </studentID>
+    <fullName>
+        <firstName>Phung</firstName>
+        <lastName>Tran</lastName>
+    </fullName>
+    <class>ICT.02</class>
+</students>
